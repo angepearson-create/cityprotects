@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minneapolis: A City Protects Her Own</title>
+<meta name="description" content="A book documenting how Minneapolis met Operation Metro Surge — and the living companion page on how to help, build capacity where you live, and stop a detention facility near you.">
+
+<!-- ============================================================= -->
+<!--  HOMEPAGE — the quiet front door. Edit the copy freely; the   -->
+<!--  one job of this page is to name the book and route readers   -->
+<!--  to /resources. Add purchase links in the CTA row when ready. -->
+<!--  The logo file "rebel-loon-custom.svg" sits next to this file. -->
+<!-- ============================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --loon:#26282f; --ink:#23252c; --steel:#47596a; --sky:#668aae;
+    --eye:#9d2732; --eye-deep:#7f1f28;
+    --paper:#EDF0F3; --paper-2:#E3E9EE; --paper-3:#F6F8FA;
+    --line:rgba(35,37,44,.14); --line-soft:rgba(35,37,44,.08);
+    --maxw:74rem;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    font-size:1.0625rem;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem);width:100%}
+  a{color:var(--eye);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:hover{color:var(--eye-deep)}
+  a:focus-visible{outline:2px solid var(--eye);outline-offset:3px;border-radius:2px}
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--steel);font-weight:500;
+  }
+
+  .masthead{border-bottom:1px solid var(--line)}
+  .masthead .wrap{display:flex;align-items:center;gap:.85rem;padding-block:1rem}
+  .brandmark{width:44px;height:44px;flex:none;display:block}
+  .brandtext .name{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.18rem;color:var(--loon)}
+
+  .hero{position:relative;overflow:hidden;flex:1;display:flex;align-items:center}
+  .hero .wrap{padding-block:clamp(3.5rem,10vw,7rem);position:relative}
+  .hero-inner{position:relative;z-index:2;max-width:46rem}
+  .hero h1{
+    font-family:"Fraunces",Georgia,serif;font-optical-sizing:auto;
+    font-weight:600;line-height:1.04;letter-spacing:-.015em;
+    font-size:clamp(2.5rem,6.5vw,4.4rem);margin:.7rem 0 0;color:var(--loon);
+  }
+  .hero h1 em{font-style:italic;font-weight:600}
+  .hero .lede{font-size:clamp(1.08rem,2.3vw,1.28rem);color:var(--ink);margin:1.3rem 0 0;max-width:36rem}
+  .rule{height:2px;width:clamp(3rem,8vw,4.5rem);background:#9d2732;background:var(--eye);border:0;margin:1.7rem 0 0}
+  .hero-watermark{
+    position:absolute;z-index:1;right:clamp(-6rem,-4vw,-2rem);top:50%;transform:translateY(-50%);
+    width:min(38rem,60vw);opacity:.05;pointer-events:none;
+  }
+  @media (max-width:760px){.hero-watermark{opacity:.04;right:-8rem}}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
+  .btn{
+    display:inline-block;text-decoration:none;border-radius:8px;
+    padding:.85rem 1.4rem;font-weight:500;font-size:1rem;
+    transition:background-color .15s ease,border-color .15s ease;
+  }
+  .btn-primary{background:#9d2732;background:var(--eye);color:#fff}
+  .btn-primary:hover{background:var(--eye-deep);color:#fff}
+  .btn-quiet{border:1px solid var(--line);color:var(--ink);background:var(--paper-3)}
+  .btn-quiet:hover{border-color:var(--sky);color:var(--ink)}
+
+  .contact{margin-top:2.6rem;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.82rem;color:var(--steel)}
+
+  footer.foot .wrap{padding-block:2rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+  footer.foot .bk{font-family:"Fraunces",serif;color:var(--loon)}
+  footer.foot .bk em{font-style:italic}
+  footer.foot .meta{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--steel)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <img class="brandmark" src="/rebel-loon-custom.svg" alt="Rebel loon — the emblem of Minneapolis: A City Protects Her Own"
+         onerror="this.style.display='none'">
+    <span class="brandtext"><span class="name">City Protects</span></span>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-watermark" src="/rebel-loon-custom.svg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">A book by Ange</span>
+      <h1><em>Minneapolis: A City Protects Her Own</em></h1>
+      <p class="lede">The documented account of how one city — its neighbors, congregations, lawyers, and watchers — met Operation Metro Surge, and what any community can learn from it before its own test comes.</p>
+      <hr class="rule">
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/resources/">Ways to help &rarr;</a>
+        <!-- When purchase links are ready, add them here, e.g.:
+        <a class="btn btn-quiet" href="https://YOUR-STORE-LINK">Get the book</a> -->
+      </div>
+      <p class="contact">contact@cityprotects.com</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="bk"><em>Minneapolis: A City Protects Her Own</em></span>
+    <span class="meta">cityprotects.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
