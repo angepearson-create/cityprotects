@@ -15,7 +15,7 @@
 <!--  HOMEPAGE — the quiet front door. Edit the copy freely; the   -->
 <!--  one job of this page is to name the book and route readers   -->
 <!--  to /resources. Add purchase links in the CTA row when ready. -->
-<!--  The logo file "rebel-loon-custom.svg" sits next to this file. -->
+<!--  The logo files brandmark.png / watermark.png sit next to this file; the loon stays as the favicon. -->
 <!-- ============================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,9 +66,9 @@
   .rule{height:2px;width:clamp(3rem,8vw,4.5rem);background:#9d2732;background:var(--eye);border:0;margin:1.7rem 0 0}
   .hero-watermark{
     position:absolute;z-index:1;right:clamp(-6rem,-4vw,-2rem);top:50%;transform:translateY(-50%);
-    width:min(38rem,60vw);opacity:.05;pointer-events:none;
+    width:min(31rem,48vw);opacity:.075;pointer-events:none;
   }
-  @media (max-width:760px){.hero-watermark{opacity:.04;right:-8rem}}
+  @media (max-width:760px){.hero-watermark{opacity:.06;right:-8rem;width:26rem}}
 
   .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
   .btn{
@@ -93,17 +93,17 @@
 
 <header class="masthead">
   <div class="wrap">
-    <img class="brandmark" src="/rebel-loon-custom.svg" alt="Rebel loon — the emblem of Minneapolis: A City Protects Her Own"
+    <img class="brandmark" src="/brandmark.png" alt="Minnesota skyline and whistle — the emblem of Minneapolis: A City Protects Her Own"
          onerror="this.style.display='none'">
     <span class="brandtext"><span class="name">City Protects</span></span>
   </div>
 </header>
 
 <section class="hero">
-  <img class="hero-watermark" src="/rebel-loon-custom.svg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <img class="hero-watermark" src="/watermark.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="hero-inner">
-      <span class="eyebrow">A book by Ange</span>
+      <span class="eyebrow">A book by Ange Pearson</span>
       <h1><em>Minneapolis: A City Protects Her Own</em></h1>
       <p class="lede">The documented account of how one city — its neighbors, congregations, lawyers, and watchers — met Operation Metro Surge, and what any community can learn from it before its own test comes.</p>
       <hr class="rule">
