@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon: the rebel loon. SVG for modern browsers; PNG fallbacks for the rest. -->
+<link rel="icon" href="/rebel-loon-custom.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Ways to Help — Minneapolis: A City Protects Her Own</title>
+<meta name="description" content="The maintained companion to the book Minneapolis: A City Protects Her Own. How to help Minneapolis, build capacity where you live, and stop a detention center near you.">
+
+<!-- ============================================================= -->
+<!--  HOW TO MAINTAIN THIS PAGE  (plain-English notes for editing)  -->
+<!--  1. UPDATE THE DATE: search for "LAST UPDATED" below and       -->
+<!--     change the date. Do this whenever you check the links.     -->
+<!--  2. EDIT AN ORG: find its name below and change the text or    -->
+<!--     the href="..." link. Each org is one <li class="org"> block.-->
+<!--  3. ADD AN ORG: copy any <li class="org">...</li> block and    -->
+<!--     paste it in the same list, then edit the copy.             -->
+<!--  4. THE LOGO: this page looks for "brandmark.png" and "watermark.png" (the loon is now only the favicon)      -->
+<!--     at the ROOT of the site (next to the homepage). One copy   -->
+<!--     there serves every page.                                   -->
+<!--  5. PUBLISHING: after editing on GitHub, click "Commit         -->
+<!--     changes" — the live site updates itself in a minute or so. -->
+<!-- ============================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* palette drawn from the rebel-loon logo */
+    --loon:#26282f;        /* loon body — darkest ink */
+    --ink:#23252c;         /* body text */
+    --steel:#47596a;       /* loon wing shadow — secondary text / rules */
+    --sky:#668aae;         /* loon wing light — muted accent */
+    --eye:#9d2732;         /* the loon's red eye — primary accent */
+    --eye-deep:#7f1f28;    /* accent hover */
+    --paper:#EDF0F3;       /* winter-daylight page */
+    --paper-2:#E3E9EE;     /* cards / alt bands */
+    --paper-3:#F6F8FA;     /* raised card face */
+    --line:rgba(35,37,44,.14);
+    --line-soft:rgba(35,37,44,.08);
+    --maxw:74rem;
+    --col:40rem;           /* reading column */
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    font-size:1.0625rem;line-height:1.62;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+  .read{max-width:var(--col)}
+
+  a{color:var(--eye);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:hover{color:var(--eye-deep)}
+  a:focus-visible{outline:2px solid var(--eye);outline-offset:3px;border-radius:2px}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--steel);font-weight:500;
+  }
+
+  /* ---------- header ---------- */
+  .masthead{border-bottom:1px solid var(--line);background:var(--paper)}
+  .masthead .wrap{display:flex;align-items:center;gap:.85rem;padding-block:1rem}
+  .brandmark{width:44px;height:44px;flex:none;display:block}
+  .brandtext{display:flex;flex-direction:column;line-height:1.15}
+  .brandtext .name{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.18rem;color:var(--loon)}
+  .brandtext .book{font-size:.78rem;color:var(--steel)}
+  .brandtext .book em{font-style:italic}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .wrap{padding-block:clamp(3rem,8vw,5.5rem)}
+  .hero-inner{position:relative;z-index:2;max-width:46rem}
+  .hero h1{
+    font-family:"Fraunces",Georgia,serif;font-optical-sizing:auto;
+    font-weight:600;line-height:1.02;letter-spacing:-.015em;
+    font-size:clamp(2.6rem,7vw,4.6rem);margin:.7rem 0 0;color:var(--loon);
+  }
+  .hero .lede{font-size:clamp(1.1rem,2.4vw,1.3rem);color:var(--ink);margin:1.15rem 0 0;max-width:34rem}
+  .rule{height:2px;width:clamp(3rem,8vw,4.5rem);background:#9d2732;background:var(--eye);border:0;margin:1.6rem 0 0}
+  .stamp{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.78rem;
+    color:var(--steel);margin-top:1.5rem;display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;
+  }
+  .stamp .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--eye);flex:none}
+  /* faint skyline watermark */
+  .hero-watermark{
+    position:absolute;z-index:1;right:clamp(-6rem,-4vw,-2rem);top:50%;transform:translateY(-50%);
+    width:min(31rem,48vw);opacity:.075;pointer-events:none;
+  }
+  @media (max-width:760px){.hero-watermark{opacity:.06;right:-8rem;width:26rem}}
+
+  /* ---------- quotes + vote ---------- */
+  .quotes{margin-top:2rem;display:grid;gap:1rem;max-width:40rem}
+  .quotes blockquote{margin:0;padding-left:1rem;border-left:2px solid var(--eye)}
+  .quotes blockquote p{margin:0;font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:1.08rem;line-height:1.45;color:var(--loon)}
+  .quotes cite{display:block;margin-top:.4rem;font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--steel)}
+  .vote{background:#26282f;background:var(--loon);color:var(--paper)}
+  .vote .wrap{padding-block:clamp(2.5rem,6vw,4rem)}
+  .vote-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:start}
+  @media (max-width:820px){.vote-grid{grid-template-columns:1fr}}
+  .vote .eyebrow{color:var(--sky)}
+  .vote h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,2.6rem);color:#fff;margin:.5rem 0 .8rem;line-height:1.1}
+  .vote p{color:#d6dde4;max-width:40rem}
+  .vote .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+  .vote .btn{display:inline-block;text-decoration:none;border-radius:8px;padding:.85rem 1.4rem;font-weight:500;font-size:1rem}
+  .vote .btn-primary{background:var(--eye);color:#fff}
+  .vote .btn-primary:hover{background:var(--eye-deep)}
+  .vote .btn-quiet{border:1px solid rgba(255,255,255,.35);color:#fff}
+  .dates{margin:0;display:grid;gap:.8rem}
+  .dates div{display:grid;grid-template-columns:5.5rem 1fr;gap:.8rem;align-items:baseline;border-top:1px solid rgba(255,255,255,.15);padding-top:.8rem}
+  .dates dt{font-family:"IBM Plex Mono",monospace;font-size:.9rem;color:var(--sky);font-weight:500;margin:0}
+  .dates dd{margin:0;color:#d6dde4}
+  /* ---------- router ---------- */
+  .router .wrap{padding-block:clamp(2.5rem,6vw,4rem)}
+  .router h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;color:var(--loon);margin:0 0 .35rem}
+  .router .sub{color:var(--steel);margin:0 0 1.8rem;max-width:40rem}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  @media (max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{
+    display:block;background:var(--paper-3);border:1px solid var(--line);border-radius:12px;
+    padding:1.5rem 1.4rem 1.6rem;text-decoration:none;color:var(--ink);
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--sky);box-shadow:0 10px 30px -18px rgba(35,37,44,.4)}
+  @media (prefers-reduced-motion:reduce){.card:hover{transform:none}}
+  .card .k{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--eye)}
+  .card h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.28rem;color:var(--loon);margin:.7rem 0 .4rem;line-height:1.15}
+  .card p{margin:0;color:var(--steel);font-size:.96rem}
+  .card .go{display:inline-block;margin-top:1rem;font-weight:500;color:var(--eye);font-size:.95rem}
+
+  /* ---------- content sections ---------- */
+  .band{border-top:1px solid var(--line)}
+  .band:nth-of-type(even){background:var(--paper-2)}
+  .band .wrap{padding-block:clamp(3rem,7vw,4.5rem)}
+  .section-head{max-width:var(--col);margin-bottom:2rem}
+  .section-head h2{
+    font-family:"Fraunces",serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;
+    font-size:clamp(1.9rem,4.5vw,2.7rem);color:var(--loon);margin:.5rem 0 0;
+  }
+  .section-head p{margin:1rem 0 0;color:var(--ink)}
+  .section-head .read{max-width:none}
+
+  .subhead{
+    font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--steel);margin:2.4rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line-soft);
+    display:flex;align-items:baseline;gap:.6rem;
+  }
+  .subhead::before{content:"";width:.5rem;height:.5rem;background:var(--eye);border-radius:50%;transform:translateY(-1px)}
+
+  /* org lists */
+  .orgs{list-style:none;margin:0;padding:0;display:grid;gap:.15rem}
+  .org{padding:1rem 0;border-bottom:1px solid var(--line-soft)}
+  .org:last-child{border-bottom:0}
+  .org .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem .8rem}
+  .org .oname{font-weight:600;font-size:1.08rem;color:var(--loon)}
+  .org .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--steel);border:1px solid var(--line);border-radius:999px;padding:.12rem .55rem;
+  }
+  .org .tag.natl{color:var(--sky);border-color:color-mix(in srgb,var(--sky) 45%,transparent)}
+  .org .desc{margin:.35rem 0 0;color:var(--steel);max-width:46rem}
+  .org .link{display:inline-block;margin-top:.4rem;font-family:"IBM Plex Mono",monospace;font-size:.86rem}
+
+  /* callout for the cash principle */
+  .note{
+    background:#26282f;background:var(--loon);color:var(--paper);border-radius:12px;padding:1.4rem 1.5rem;
+    margin:0 0 2rem;max-width:var(--col);
+  }
+  .note strong{color:#fff}
+  .note .eyebrow{color:var(--sky)}
+
+  /* playbook */
+  .playbook{counter-reset:step;list-style:none;margin:2rem 0 0;padding:0;max-width:50rem}
+  .playbook > li{
+    counter-increment:step;position:relative;padding:0 0 1.6rem 4rem;
+    border-left:1px solid var(--line);margin-left:1.15rem;
+  }
+  .playbook > li:last-child{border-left-color:transparent;padding-bottom:0}
+  .playbook > li::before{
+    content:counter(step,decimal-leading-zero);
+    position:absolute;left:-1.15rem;top:-.2rem;transform:translateX(-50%);
+    font-family:"IBM Plex Mono",monospace;font-size:.9rem;font-weight:500;color:var(--paper);
+    background:var(--eye);width:2.3rem;height:2.3rem;border-radius:50%;
+    display:grid;place-items:center;background:#9d2732;background:var(--eye);
+  }
+  .playbook h4{font-family:"Fraunces",serif;font-weight:600;font-size:1.2rem;color:var(--loon);margin:.1rem 0 .4rem}
+  .playbook p{margin:0;color:var(--ink)}
+  .playbook .refs{margin-top:.5rem;font-size:.92rem;color:var(--steel)}
+
+  .pattern{
+    margin-top:2.4rem;padding:1.5rem 1.6rem;border:1px solid var(--line);border-left:3px solid var(--eye);
+    border-radius:8px;background:var(--paper-3);max-width:50rem;
+  }
+  .pattern p{margin:0;color:var(--ink)}
+
+  /* closing */
+  .closing{background:#26282f;background:var(--loon);color:var(--paper);border-top:1px solid var(--loon)}
+  .closing .wrap{padding-block:clamp(3rem,7vw,4.5rem)}
+  .closing .read{max-width:44rem}
+  .closing h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);color:#fff;margin:0 0 1rem;line-height:1.12}
+  .closing p{color:#d6dde4}
+  .closing .sign{font-family:"Fraunces",serif;font-style:italic;font-size:1.25rem;color:var(--sky);margin-top:1.6rem}
+
+  footer.foot{background:var(--paper)}
+  footer.foot .wrap{padding-block:2.4rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+  footer.foot .bk{font-family:"Fraunces",serif;color:var(--loon)}
+  footer.foot .bk em{font-style:italic}
+  footer.foot .meta{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--steel)}
+
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--loon);color:#fff;padding:.6rem 1rem;border-radius:6px}
+</style>
+</head>
+<body>
+<a href="#help-now" class="skip">Skip to help</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="masthead">
+  <div class="wrap">
+    <!-- LOGO: rebel-loon-custom.svg lives at the ROOT of the site (one copy serves every page).
+         If the file is missing, the mark hides and the wordmark still shows. -->
+    <img class="brandmark" src="/brandmark.png" alt="Minnesota skyline and whistle — the emblem of Minneapolis: A City Protects Her Own"
+         onerror="this.style.display='none'">
+    <span class="brandtext">
+      <span class="name">City Protects</span>
+      <span class="book">Companion to <em>Minneapolis: A City Protects Her Own</em></span>
+    </span>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <!-- faint skyline watermark -->
+  <img class="hero-watermark" src="/watermark.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Ways to help</span>
+      <h1>Help Protect Our Democracy</h1>
+      <p class="lede">The book ends with a to-do list. This is where it stays current — the living companion to the appendix, updated as organizations and needs change. And right now the single most important item on it is the one below.</p>
+      <hr class="rule">
+      <!-- LAST UPDATED — change this date whenever you re-check the links below -->
+      <p class="stamp"><span class="dot"></span> Last updated: September 8, 2026 &nbsp;·&nbsp; Verify each link before you give; this landscape moves fast.</p>
+      <div class="quotes">
+        <blockquote><p>Freedom is a fragile thing and is never more than one generation away from extinction.</p><cite>Ronald Reagan, inaugural address as governor of California, January 5, 1967</cite></blockquote>
+        <blockquote><p>When our communities were under attack, we stood up and we fought back. And when our democracy is under attack, we will do the exact same thing.</p><cite>Moriah O&rsquo;Malley, Monarca Democracy Defense, Unidos MN, <a href="https://www.womenspress.com/monarca-democracy-defense-network-to-protect-voting-rights/">April 2026</a></cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ROUTER ===================== -->
+<!-- ===================== VOTE ===================== -->
+<section class="vote" id="vote">
+  <div class="wrap">
+    <div class="vote-grid">
+      <div>
+        <span class="eyebrow">First, and above everything</span>
+        <h2>Vote in the midterm. November 3, 2026.</h2>
+        <p>Early voting in Minnesota opens <strong>September 18</strong>. Register or check your registration by <strong>October 13</strong> — or register at the polls on election day.</p>
+        <p>The watchers, drivers, and food-shelf volunteers in this book protected their neighbors without waiting for permission. The ballot is the one form of that protection every citizen already holds.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://mnvotes.sos.mn.gov/VoterRegistration/index">Register or check your registration &rarr;</a>
+          <a class="btn btn-quiet" href="https://www.sos.mn.gov/elections-voting/other-ways-to-vote/vote-early-by-mail/">Vote early or by mail</a>
+        </div>
+      </div>
+      <dl class="dates">
+        <div><dt>Sept 18</dt><dd>Early voting opens, in person and by mail</dd></div>
+        <div><dt>Oct 13</dt><dd>Pre-registration deadline</dd></div>
+        <div><dt>Nov 3</dt><dd>Election day — same-day registration at the polls</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="router">
+  <div class="wrap">
+    <h2>Start where you are</h2>
+    <p class="sub">Four questions. Pick the one that fits you right now.</p>
+    <div class="cards">
+      <a class="card" href="#help-now">
+        <span class="k">Right now</span>
+        <h3>Help Minneapolis</h3>
+        <p>Give to the Twin Cities organizations doing food, legal, and bond work — and give in the way that helps most.</p>
+        <span class="go">Where to give &rarr;</span>
+      </a>
+      <a class="card" href="#build">
+        <span class="k">Before the test</span>
+        <h3>Build where you live</h3>
+        <p>What protected Minneapolis was built in ordinary time. Here's how to build it in your own community.</p>
+        <span class="go">Start building &rarr;</span>
+      </a>
+      <a class="card" href="#polls">
+        <span class="k">This fall</span>
+        <h3>Protect the polls</h3>
+        <p>Federal agents at a polling place are a crime, not a hypothetical. How to be an election judge, what to document, who to call.</p>
+        <span class="go">Read the playbook &rarr;</span>
+      </a>
+      <a class="card" href="#facility">
+        <span class="k">If it comes</span>
+        <h3>Stop a detention center near you</h3>
+        <p>A detention site is being proposed nearby. This is the playbook communities have used to stop them.</p>
+        <span class="go">Open the playbook &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HELP MINNEAPOLIS NOW ===================== -->
+<section class="band" id="help-now">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">01 — Right now</span>
+      <h2>Helping Minneapolis now</h2>
+      <p class="read">These are the Twin Cities organizations carrying the work. Where it helps, a self-updating national directory is listed too, so you can find the same kind of help anywhere.</p>
+    </div>
+
+    <div class="note">
+      <span class="eyebrow">The one rule that matters most</span>
+      <p style="margin:.5rem 0 0"><strong>Give cash, and give monthly.</strong> Unrestricted money moves faster than donated goods and lets an organization respond to what's actually needed. A small recurring gift is worth more than a one-time surge — it lets them plan and hold capacity between crises.</p>
+    </div>
+
+    <div class="subhead">Food</div>
+    <ul class="orgs">
+      <li class="org">
+        <div class="top"><span class="oname">Feeding America — Find Your Local Food Bank</span><span class="tag natl">National · self-updating</span></div>
+        <p class="desc">The fastest way to find the food bank serving any address in the country. The directory updates itself as member organizations change.</p>
+        <a class="link" href="https://www.feedingamerica.org/find-your-local-foodbank">feedingamerica.org/find-your-local-foodbank</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Second Harvest Heartland</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">The upper Midwest's largest hunger-relief organization, supplying more than 1,000 food shelves and meal programs — the backbone many mutual-aid networks drew on during the surge.</p>
+        <a class="link" href="https://www.2harvest.org">2harvest.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">The Food Group</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">Culturally connected food access — sourcing halal, kosher, and culturally familiar food that generic supplies can't meet, for Somali, Hmong, Latino, and East African communities.</p>
+        <a class="link" href="https://www.thefoodgroupmn.org">thefoodgroupmn.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Metro Meals on Wheels</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">Meal delivery to homebound seniors and people with disabilities — a lifeline for residents unable or afraid to leave home.</p>
+        <a class="link" href="https://meals-on-wheels.com">meals-on-wheels.com</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Open Arms of Minnesota</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">Medically tailored meals for people living with serious illness — critical for those cut off from care and isolated at home.</p>
+        <a class="link" href="https://www.openarmsmn.org">openarmsmn.org</a>
+      </li>
+    </ul>
+
+    <div class="subhead">Legal defense &amp; organizing</div>
+    <ul class="orgs">
+      <li class="org">
+        <div class="top"><span class="oname">Immigration Law Help</span><span class="tag natl">National · self-updating</span></div>
+        <p class="desc">A national directory of nonprofit immigration legal-aid providers — the way to find trustworthy representation in any state.</p>
+        <a class="link" href="https://www.immigrationlawhelp.org">immigrationlawhelp.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Immigrant Law Center of Minnesota (ILCM)</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">Free and low-cost immigration legal services. During the surge its attorneys filed habeas petitions and represented families transferred out of state. Donations fund direct representation; attorneys can ask about pro bono partnership.</p>
+        <a class="link" href="https://www.ilcm.org">ilcm.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">COPAL</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">Comunidades Organizando el Poder y la Acción Latina — frontline organizing: community defenders, rapid-response networks, know-your-rights materials, and connection to legal and material aid.</p>
+        <a class="link" href="https://copalmn.org">copalmn.org</a>
+      </li>
+    </ul>
+
+    <div class="subhead">Bond &amp; bail</div>
+    <ul class="orgs">
+      <li class="org">
+        <div class="top"><span class="oname">National Bail Fund Network — Directory</span><span class="tag natl">National · self-updating</span></div>
+        <p class="desc">Find a community bail or immigration-bond fund anywhere in the country.</p>
+        <a class="link" href="https://www.communityjusticeexchange.org/nbfn-directory">communityjusticeexchange.org/nbfn-directory</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Minnesota Freedom Fund</span><span class="tag">Twin Cities</span></div>
+        <p class="desc">Pays bail and immigration bonds for people who can't afford them — keeping detention from becoming the pressure that forces a plea or a signature. Donations go directly to bond payments.</p>
+        <a class="link" href="https://www.mnfreedomfund.org">mnfreedomfund.org</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== BUILD WHERE YOU LIVE ===================== -->
+<section class="band" id="build">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 — Before the test</span>
+      <h2>Building capacity where you live</h2>
+      <p class="read">If you don't live in Minneapolis, the most useful thing this book offers isn't a list to donate to — it's a way to prepare your own community. None of what protected Minneapolis was unique to it. All of it can be built anywhere, in calm weather, before it's needed.</p>
+    </div>
+
+    <ul class="orgs">
+      <li class="org">
+        <div class="top"><span class="oname">Find out where your community stands</span></div>
+        <p class="desc">Does your city or county have a separation ordinance limiting local law enforcement's cooperation with federal immigration enforcement? If not, ask your council why, and what passing one would take. The Advocates for Human Rights publishes plain-language guidance.</p>
+        <a class="link" href="https://www.theadvocatesforhumanrights.org">theadvocatesforhumanrights.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Build the interfaith relationships first</span></div>
+        <p class="desc">The clergy coalition that showed up in Minneapolis existed because congregations had been in relationship for years. If your faith community isn't yet connected across lines — to Muslim, Jewish, and other communities near you — that work can begin now.</p>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Find or start a mutual aid network</span></div>
+        <p class="desc">The care networks that fed Minneapolis grew out of infrastructure built during the COVID years. Mutual Aid Hub maps existing networks and publishes guidance for starting one.</p>
+        <a class="link" href="https://www.mutualaidhub.org">mutualaidhub.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Learn to observe</span></div>
+        <p class="desc">Trained legal observers who document enforcement lawfully were central to what Minneapolis could later prove. The National Lawyers Guild trains community members; it takes a few hours and is offered in most cities.</p>
+        <a class="link" href="https://www.nlg.org">nlg.org</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Know your rights, and share them</span></div>
+        <p class="desc">The Immigrant Legal Resource Center's Red Cards explain, in plain language and many languages, what to do if immigration agents come to the door. They can be printed and handed out.</p>
+        <a class="link" href="https://www.ilrc.org/red-cards">ilrc.org/red-cards</a>
+      </li>
+      <li class="org">
+        <div class="top"><span class="oname">Support your local legal aid</span></div>
+        <p class="desc">Every community has one; every one is underfunded; each is the first line of defense when rights are violated. A small recurring gift helps it hold the capacity a crisis demands. Find yours through the national directory above.</p>
+        <a class="link" href="https://www.immigrationlawhelp.org">immigrationlawhelp.org</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PROTECT THE POLLS ===================== -->
+<section class="band" id="polls">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 — This fall</span>
+      <h2>Protect the polls</h2>
+      <p class="read">Federal agents at a polling place are not a hypothetical; they are a crime. Federal law forbids stationing armed federal officers at the polls, and Minnesota law bars law enforcement of any level from being posted at a polling place unless election judges call them. DHS has said ICE &ldquo;is not planning operations targeting polling locations.&rdquo; Hold them to it.</p>
+    </div>
+
+    <ol class="playbook">
+      <li>
+        <h4>Be an election judge</h4>
+        <p>Judges run the polling place, and they are the only people who can summon police to it. Two hours of training, paid, and you apply through your city or county.</p>
+        <p class="refs"><a href="https://www.sos.mn.gov/elections-voting/get-involved/become-an-election-judge/">Become an election judge — Minnesota Secretary of State</a></p>
+      </li>
+      <li>
+        <h4>Vote early, or from home</h4>
+        <p>From September 18, anyone who would rather not be at a polling place on the day doesn&rsquo;t have to be. Absentee ballots can be requested by mail or cast in person at your county election office.</p>
+        <p class="refs"><a href="https://www.sos.mn.gov/elections-voting/other-ways-to-vote/vote-early-by-mail/">Vote early by mail</a> · <a href="https://www.sos.mn.gov/elections-voting/other-ways-to-vote/vote-early-in-person/">Vote early in person</a></p>
+      </li>
+      <li>
+        <h4>If you see agents at a poll: don&rsquo;t confront. Document.</h4>
+        <p>Time, place, uniforms, vehicles, what they did. Tell an election judge. Then call the Election Protection hotline: <strong>1-866-OUR-VOTE</strong> (Spanish <strong>1-888-VE-Y-VOTA</strong>).</p>
+        <p class="refs"><a href="https://866ourvote.org">866ourvote.org</a> · <a href="https://www.brennancenter.org/our-work/research-reports/vote-safely-2026">Brennan Center, &ldquo;Vote Safely in 2026&rdquo;</a></p>
+      </li>
+      <li>
+        <h4>Go with someone</h4>
+        <p>Voting in twos and threes is a form of watching back. Offer a ride; ask a neighbor who might be nervous to come with you.</p>
+      </li>
+      <li>
+        <h4>If an agent stops you</h4>
+        <p>Ask whether you are free to leave. You do not have to answer questions about where you were born or your immigration status; you can say &ldquo;I want to remain silent.&rdquo; Then call the hotline above.</p>
+      </li>
+      <li>
+        <h4>Get trained</h4>
+        <p>The observer model that watched ICE in Minneapolis has been turned toward the polls. Monarca Democracy Defense trainings run through neighborhood associations and Unidos MN.</p>
+        <p class="refs"><a href="https://monarcamn.org">monarcamn.org</a> · <a href="https://unidos-mn.org">unidos-mn.org</a></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== DETENTION PLAYBOOK ===================== -->
+<section class="band" id="facility">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">04 — If it comes</span>
+      <h2>If a detention center is proposed near you</h2>
+      <p class="read">Bookmark this before you need it. The federal detention build-out runs on speed and secrecy — the aim is to get a site approved before the surrounding community can organize, because once permits issue and construction begins, leverage collapses. Communities across the political spectrum have stopped proposed facilities anyway, by working the same points of leverage, roughly in this order.</p>
+    </div>
+
+    <ol class="playbook">
+      <li>
+        <h4>Act early and force transparency</h4>
+        <p>ICE rarely tells local governments before it moves. File public-records requests with your city, county, and state for permits, environmental reviews, and contracts tied to large warehouse purchases by federal agencies. Watch planning and zoning agendas.</p>
+        <p class="refs">Tracking tools: <a href="https://www.detentionwatchnetwork.org">Detention Watch Network</a> · <a href="https://indivisible.org/campaigns/dismantling-detention">Indivisible's map of proposed &amp; confirmed sites</a></p>
+      </li>
+      <li>
+        <h4>Show up where opposition becomes visible</h4>
+        <p>City councils, county boards, and zoning commissions are where opposition turns into something elected officials must answer to. In Surprise, Arizona, hundreds packed council meetings to demand the city force DHS to disclose its plans. What an official most needs to hear: constituents are watching, and it will matter at the next election.</p>
+      </li>
+      <li>
+        <h4>Use the local tools</h4>
+        <p>Zoning codes, building permits, utility-service decisions, and moratoriums all create friction. Jurisdictions have pursued environmental review under the National Environmental Policy Act, which gives opponents a legal foothold. Ask your city attorney or a local environmental-law group what tools you have.</p>
+        <p class="refs">Legal resources on local authority: <a href="https://www.nilc.org">National Immigration Law Center</a></p>
+      </li>
+      <li>
+        <h4>Pressure the owners and contractors</h4>
+        <p>The private parties are not the federal government, and they answer to reputation and money in ways DHS doesn't. Warehouse owners have walked away from federal sales after sustained public campaigns. Find out who owns the site and who the operators are — the two largest, CoreCivic and GEO Group, are publicly traded, with boards and investors who can be reached.</p>
+      </li>
+      <li>
+        <h4>Build across the aisle</h4>
+        <p>The most effective opposition comes from places that don't fit a partisan script — fiscal conservatives who object to no-bid contracts and secrecy, environmental advocates, faith communities, and neighbors who simply don't want a federal detention center down the road. A coalition that crosses party lines is harder to dismiss and harder to caricature.</p>
+      </li>
+    </ol>
+
+    <div class="pattern">
+      <p>These aren't isolated flukes. In Kansas City, Oklahoma City, and Merrimack, New Hampshire, sustained pressure blocked proposed facilities. In Hutchins, Texas — a town of six thousand — the warehouse's owner backed out of a federal sale. In Social Circle, Georgia, the city cut off water service to a planned site until ICE explained itself. They're a pattern, and the pattern has a logic: apply it early, apply it together, and it works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="closing">
+  <div class="wrap">
+    <div class="read">
+      <h2>Build now what you will need then.</h2>
+      <p>The strategy deployed in Minneapolis — concentrated enforcement in a pluralist city, meant to provoke the disorder that justifies escalation — is available to any administration willing to use it. What Minneapolis showed is that a community with strong civic institutions, deep mutual aid, interfaith trust, legal infrastructure, and the habit of documentation can absorb that pressure and remain recognizable to itself on the other side.</p>
+      <p>The distance between powerless and under-organized is not courage or virtue. It is preparation — the steady, unglamorous, often invisible work described here. It's the work that decides whether your community, when its test comes, will have what Minneapolis had.</p>
+      <p class="sign">Minneapolis: a city protecting her own.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="bk">From <em>Minneapolis: A City Protects Her Own</em></span>
+    <span class="meta">cityprotects.com/resources</span>
+  </div>
+</footer>
+
+</body>
+</html>
