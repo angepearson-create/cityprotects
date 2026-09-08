@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Ways to Help — Minneapolis: A City Protects Her Own</title>
-<meta name="description" content="The maintained companion to the book Minneapolis: A City Protects Her Own. How to help Minneapolis, build capacity where you live, and stop a detention facility near you.">
+<meta name="description" content="The maintained companion to the book Minneapolis: A City Protects Her Own. How to help Minneapolis, build capacity where you live, and stop a detention center near you.">
 
 <!-- ============================================================= -->
 <!--  HOW TO MAINTAIN THIS PAGE  (plain-English notes for editing)  -->
@@ -19,7 +19,7 @@
 <!--     the href="..." link. Each org is one <li class="org"> block.-->
 <!--  3. ADD AN ORG: copy any <li class="org">...</li> block and    -->
 <!--     paste it in the same list, then edit the copy.             -->
-<!--  4. THE LOGO: this page looks for "rebel-loon-custom.svg"      -->
+<!--  4. THE LOGO: this page looks for "brandmark.png" and "watermark.png" (the loon is now only the favicon)      -->
 <!--     at the ROOT of the site (next to the homepage). One copy   -->
 <!--     there serves every page.                                   -->
 <!--  5. PUBLISHING: after editing on GitHub, click "Commit         -->
@@ -95,18 +95,39 @@
     color:var(--steel);margin-top:1.5rem;display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;
   }
   .stamp .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--eye);flex:none}
-  /* faint loon watermark */
+  /* faint skyline watermark */
   .hero-watermark{
     position:absolute;z-index:1;right:clamp(-6rem,-4vw,-2rem);top:50%;transform:translateY(-50%);
-    width:min(38rem,60vw);opacity:.05;pointer-events:none;
+    width:min(31rem,48vw);opacity:.075;pointer-events:none;
   }
-  @media (max-width:760px){.hero-watermark{opacity:.04;right:-8rem}}
+  @media (max-width:760px){.hero-watermark{opacity:.06;right:-8rem;width:26rem}}
 
+  /* ---------- quotes + vote ---------- */
+  .quotes{margin-top:2rem;display:grid;gap:1rem;max-width:40rem}
+  .quotes blockquote{margin:0;padding-left:1rem;border-left:2px solid var(--eye)}
+  .quotes blockquote p{margin:0;font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:1.08rem;line-height:1.45;color:var(--loon)}
+  .quotes cite{display:block;margin-top:.4rem;font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--steel)}
+  .vote{background:#26282f;background:var(--loon);color:var(--paper)}
+  .vote .wrap{padding-block:clamp(2.5rem,6vw,4rem)}
+  .vote-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:start}
+  @media (max-width:820px){.vote-grid{grid-template-columns:1fr}}
+  .vote .eyebrow{color:var(--sky)}
+  .vote h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,2.6rem);color:#fff;margin:.5rem 0 .8rem;line-height:1.1}
+  .vote p{color:#d6dde4;max-width:40rem}
+  .vote .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+  .vote .btn{display:inline-block;text-decoration:none;border-radius:8px;padding:.85rem 1.4rem;font-weight:500;font-size:1rem}
+  .vote .btn-primary{background:var(--eye);color:#fff}
+  .vote .btn-primary:hover{background:var(--eye-deep)}
+  .vote .btn-quiet{border:1px solid rgba(255,255,255,.35);color:#fff}
+  .dates{margin:0;display:grid;gap:.8rem}
+  .dates div{display:grid;grid-template-columns:5.5rem 1fr;gap:.8rem;align-items:baseline;border-top:1px solid rgba(255,255,255,.15);padding-top:.8rem}
+  .dates dt{font-family:"IBM Plex Mono",monospace;font-size:.9rem;color:var(--sky);font-weight:500;margin:0}
+  .dates dd{margin:0;color:#d6dde4}
   /* ---------- router ---------- */
   .router .wrap{padding-block:clamp(2.5rem,6vw,4rem)}
   .router h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;color:var(--loon);margin:0 0 .35rem}
   .router .sub{color:var(--steel);margin:0 0 1.8rem;max-width:40rem}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
   @media (max-width:820px){.cards{grid-template-columns:1fr}}
   .card{
     display:block;background:var(--paper-3);border:1px solid var(--line);border-radius:12px;
@@ -211,7 +232,7 @@
   <div class="wrap">
     <!-- LOGO: rebel-loon-custom.svg lives at the ROOT of the site (one copy serves every page).
          If the file is missing, the mark hides and the wordmark still shows. -->
-    <img class="brandmark" src="/rebel-loon-custom.svg" alt="Rebel loon — the emblem of Minneapolis: A City Protects Her Own"
+    <img class="brandmark" src="/brandmark.png" alt="Minnesota skyline and whistle — the emblem of Minneapolis: A City Protects Her Own"
          onerror="this.style.display='none'">
     <span class="brandtext">
       <span class="name">City Protects</span>
@@ -222,25 +243,52 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <!-- faint loon watermark -->
-  <img class="hero-watermark" src="/rebel-loon-custom.svg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <!-- faint skyline watermark -->
+  <img class="hero-watermark" src="/watermark.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="hero-inner">
       <span class="eyebrow">Ways to help</span>
-      <h1>You are not powerless. You are under-organized.</h1>
-      <p class="lede">The book ends with a to-do list. This is where it stays current — the living companion to the appendix, updated as organizations and needs change.</p>
+      <h1>Help Protect Our Democracy</h1>
+      <p class="lede">The book ends with a to-do list. This is where it stays current — the living companion to the appendix, updated as organizations and needs change. And right now the single most important item on it is the one below.</p>
       <hr class="rule">
       <!-- LAST UPDATED — change this date whenever you re-check the links below -->
-      <p class="stamp"><span class="dot"></span> Last updated: July 1, 2026 &nbsp;·&nbsp; Verify each link before you give; this landscape moves fast.</p>
+      <p class="stamp"><span class="dot"></span> Last updated: September 8, 2026 &nbsp;·&nbsp; Verify each link before you give; this landscape moves fast.</p>
+      <div class="quotes">
+        <blockquote><p>Freedom is a fragile thing and is never more than one generation away from extinction.</p><cite>Ronald Reagan, inaugural address as governor of California, January 5, 1967</cite></blockquote>
+        <blockquote><p>When our communities were under attack, we stood up and we fought back. And when our democracy is under attack, we will do the exact same thing.</p><cite>Moriah O&rsquo;Malley, Monarca Democracy Defense, Unidos MN, <a href="https://www.womenspress.com/monarca-democracy-defense-network-to-protect-voting-rights/">April 2026</a></cite></blockquote>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== ROUTER ===================== -->
+<!-- ===================== VOTE ===================== -->
+<section class="vote" id="vote">
+  <div class="wrap">
+    <div class="vote-grid">
+      <div>
+        <span class="eyebrow">First, and above everything</span>
+        <h2>Vote in the midterm. November 3, 2026.</h2>
+        <p>Early voting in Minnesota opens <strong>September 18</strong>. Register or check your registration by <strong>October 13</strong> — or register at the polls on election day.</p>
+        <p>The watchers, drivers, and food-shelf volunteers in this book protected their neighbors without waiting for permission. The ballot is the one form of that protection every citizen already holds.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://mnvotes.sos.mn.gov/VoterRegistration/index">Register or check your registration &rarr;</a>
+          <a class="btn btn-quiet" href="https://www.sos.mn.gov/elections-voting/other-ways-to-vote/vote-early-by-mail/">Vote early or by mail</a>
+        </div>
+      </div>
+      <dl class="dates">
+        <div><dt>Sept 18</dt><dd>Early voting opens, in person and by mail</dd></div>
+        <div><dt>Oct 13</dt><dd>Pre-registration deadline</dd></div>
+        <div><dt>Nov 3</dt><dd>Election day — same-day registration at the polls</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 <section class="router">
   <div class="wrap">
     <h2>Start where you are</h2>
-    <p class="sub">Three questions. Pick the one that fits you right now.</p>
+    <p class="sub">Four questions. Pick the one that fits you right now.</p>
     <div class="cards">
       <a class="card" href="#help-now">
         <span class="k">Right now</span>
@@ -254,9 +302,15 @@
         <p>What protected Minneapolis was built in ordinary time. Here's how to build it in your own community.</p>
         <span class="go">Start building &rarr;</span>
       </a>
+      <a class="card" href="#polls">
+        <span class="k">This fall</span>
+        <h3>Protect the polls</h3>
+        <p>Federal agents at a polling place are a crime, not a hypothetical. How to be an election judge, what to document, who to call.</p>
+        <span class="go">Read the playbook &rarr;</span>
+      </a>
       <a class="card" href="#facility">
         <span class="k">If it comes</span>
-        <h3>Stop a facility near you</h3>
+        <h3>Stop a detention center near you</h3>
         <p>A detention site is being proposed nearby. This is the playbook communities have used to stop them.</p>
         <span class="go">Open the playbook &rarr;</span>
       </a>
@@ -385,12 +439,54 @@
   </div>
 </section>
 
+<!-- ===================== PROTECT THE POLLS ===================== -->
+<section class="band" id="polls">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 — This fall</span>
+      <h2>Protect the polls</h2>
+      <p class="read">Federal agents at a polling place are not a hypothetical; they are a crime. Federal law forbids stationing armed federal officers at the polls, and Minnesota law bars law enforcement of any level from being posted at a polling place unless election judges call them. DHS has said ICE &ldquo;is not planning operations targeting polling locations.&rdquo; Hold them to it.</p>
+    </div>
+
+    <ol class="playbook">
+      <li>
+        <h4>Be an election judge</h4>
+        <p>Judges run the polling place, and they are the only people who can summon police to it. Two hours of training, paid, and you apply through your city or county.</p>
+        <p class="refs"><a href="https://www.sos.mn.gov/elections-voting/get-involved/become-an-election-judge/">Become an election judge — Minnesota Secretary of State</a></p>
+      </li>
+      <li>
+        <h4>Vote early, or from home</h4>
+        <p>From September 18, anyone who would rather not be at a polling place on the day doesn&rsquo;t have to be. Absentee ballots can be requested by mail or cast in person at your county election office.</p>
+        <p class="refs"><a href="https://www.sos.mn.gov/elections-voting/other-ways-to-vote/vote-early-by-mail/">Vote early by mail</a> · <a href="https://www.sos.mn.gov/elections-voting/other-ways-to-vote/vote-early-in-person/">Vote early in person</a></p>
+      </li>
+      <li>
+        <h4>If you see agents at a poll: don&rsquo;t confront. Document.</h4>
+        <p>Time, place, uniforms, vehicles, what they did. Tell an election judge. Then call the Election Protection hotline: <strong>1-866-OUR-VOTE</strong> (Spanish <strong>1-888-VE-Y-VOTA</strong>).</p>
+        <p class="refs"><a href="https://866ourvote.org">866ourvote.org</a> · <a href="https://www.brennancenter.org/our-work/research-reports/vote-safely-2026">Brennan Center, &ldquo;Vote Safely in 2026&rdquo;</a></p>
+      </li>
+      <li>
+        <h4>Go with someone</h4>
+        <p>Voting in twos and threes is a form of watching back. Offer a ride; ask a neighbor who might be nervous to come with you.</p>
+      </li>
+      <li>
+        <h4>If an agent stops you</h4>
+        <p>Ask whether you are free to leave. You do not have to answer questions about where you were born or your immigration status; you can say &ldquo;I want to remain silent.&rdquo; Then call the hotline above.</p>
+      </li>
+      <li>
+        <h4>Get trained</h4>
+        <p>The observer model that watched ICE in Minneapolis has been turned toward the polls. Monarca Democracy Defense trainings run through neighborhood associations and Unidos MN.</p>
+        <p class="refs"><a href="https://monarcamn.org">monarcamn.org</a> · <a href="https://unidos-mn.org">unidos-mn.org</a></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <!-- ===================== DETENTION PLAYBOOK ===================== -->
 <section class="band" id="facility">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">03 — If it comes</span>
-      <h2>If a facility is proposed near you</h2>
+      <span class="eyebrow">04 — If it comes</span>
+      <h2>If a detention center is proposed near you</h2>
       <p class="read">Bookmark this before you need it. The federal detention build-out runs on speed and secrecy — the aim is to get a site approved before the surrounding community can organize, because once permits issue and construction begins, leverage collapses. Communities across the political spectrum have stopped proposed facilities anyway, by working the same points of leverage, roughly in this order.</p>
     </div>
 
