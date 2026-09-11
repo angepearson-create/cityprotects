@@ -51,6 +51,12 @@
   .masthead{border-bottom:1px solid var(--line)}
   .masthead .wrap{display:flex;align-items:center;gap:.85rem;padding-block:1rem}
   .brandmark{width:44px;height:44px;flex:none;display:block}
+  .masthead nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.92rem}
+  .masthead nav a{color:var(--steel);text-decoration:none}
+  .masthead nav a:hover{color:var(--eye)}
+  .masthead nav a[aria-current="page"]{color:var(--loon);font-weight:500;border-bottom:2px solid var(--eye)}
+  .masthead .brandtext a{color:inherit;text-decoration:none}
+  @media (max-width:640px){.masthead .wrap{flex-wrap:wrap}.masthead nav{margin-left:0;width:100%;gap:1rem;font-size:.88rem}}
   .brandtext .name{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.18rem;color:var(--loon)}
 
   .hero{position:relative;overflow:hidden;flex:1;display:flex;align-items:center}
@@ -97,9 +103,10 @@
 
 <header class="masthead">
   <div class="wrap">
-    <img class="brandmark" src="/brandmark.png" alt="Minnesota skyline and whistle — the emblem of Minneapolis: A City Protects Her Own"
-         onerror="this.style.display='none'">
-    <span class="brandtext"><span class="name">City Protects</span></span>
+    <a href="/" aria-label="Home"><img class="brandmark" src="/brandmark.png" alt="Minnesota skyline and whistle — the emblem of Minneapolis: A City Protects Her Own"
+         onerror="this.style.display='none'"></a>
+    <span class="brandtext"><span class="name"><a href="/">City Protects</a></span></span>
+    <nav aria-label="Site"><a href="/" aria-current="page">Home</a><a href="/resources/">Ways to help</a><a href="/what-should-change/">What should change</a><a href="https://www.amazon.com/dp/B0HJFBJNTD" rel="noopener">Get the book &rarr;</a></nav>
   </div>
 </header>
 
