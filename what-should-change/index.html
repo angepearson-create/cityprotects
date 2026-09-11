@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/rebel-loon-custom.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>What Should Change — Minneapolis: A City Protects Her Own</title>
+<meta name="description" content="The book documents what happened in Minneapolis. This page says what its author thinks should change — on enforcement, on the people caught in it, on accountability, and on the buildout.">
+
+<!-- ============================================================= -->
+<!--  WHAT SHOULD CHANGE — the author's positions. Opinion, kept    -->
+<!--  separate from the book's record. Edit any point freely; each  -->
+<!--  is one <li> block. Update "LAST UPDATED" when you revise.     -->
+<!--  Lives at /what-should-change/index.html in the GitHub repo.   -->
+<!-- ============================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --loon:#26282f; --ink:#23252c; --steel:#47596a; --sky:#668aae;
+    --eye:#9d2732; --eye-deep:#7f1f28;
+    --paper:#EDF0F3; --paper-2:#E3E9EE; --paper-3:#F6F8FA;
+    --line:rgba(35,37,44,.14); --line-soft:rgba(35,37,44,.08);
+    --maxw:74rem; --col:40rem;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    font-size:1.0625rem;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+  .read{max-width:var(--col)}
+  a{color:var(--eye);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:hover{color:var(--eye-deep)}
+  a:focus-visible{outline:2px solid var(--eye);outline-offset:3px;border-radius:2px}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:500}
+
+  .masthead{border-bottom:1px solid var(--line);background:var(--paper)}
+  .masthead .wrap{display:flex;align-items:center;gap:.85rem;padding-block:1rem}
+  .brandmark{width:44px;height:44px;flex:none;display:block}
+  .brandtext{display:flex;flex-direction:column;line-height:1.15}
+  .brandtext .name{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.18rem;color:var(--loon)}
+  .brandtext .book{font-size:.78rem;color:var(--steel)}
+  .brandtext .book em{font-style:italic}
+  .masthead nav{margin-left:auto;display:flex;gap:1.2rem;font-size:.92rem}
+  .masthead nav a{color:var(--steel);text-decoration:none}
+  .masthead nav a:hover{color:var(--eye)}
+
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .wrap{padding-block:clamp(3rem,8vw,5.5rem)}
+  .hero-inner{position:relative;z-index:2;max-width:46rem}
+  .hero h1{font-family:"Fraunces",Georgia,serif;font-optical-sizing:auto;font-weight:600;line-height:1.02;letter-spacing:-.015em;font-size:clamp(2.6rem,7vw,4.6rem);margin:.7rem 0 0;color:var(--loon)}
+  .hero .lede{font-size:clamp(1.1rem,2.4vw,1.3rem);color:var(--ink);margin:1.15rem 0 0;max-width:36rem}
+  .rule{height:2px;width:clamp(3rem,8vw,4.5rem);background:var(--eye);border:0;margin:1.6rem 0 0}
+  .stamp{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.78rem;color:var(--steel);margin-top:1.5rem;display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+  .stamp .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--eye);flex:none}
+  .hero-watermark{position:absolute;z-index:1;right:clamp(-6rem,-4vw,-2rem);top:50%;transform:translateY(-50%);width:min(31rem,48vw);opacity:.075;pointer-events:none}
+  @media (max-width:760px){.hero-watermark{opacity:.06;right:-8rem;width:26rem}}
+
+  .band .wrap{padding-block:clamp(2.5rem,6vw,4rem)}
+  .band + .band{border-top:1px solid var(--line)}
+  .band h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);color:var(--loon);margin:.35rem 0 .5rem;line-height:1.15}
+  .band .intro{color:var(--steel);margin:0 0 1.6rem;max-width:var(--col)}
+  ol.points{list-style:none;margin:0;padding:0;max-width:44rem;counter-reset:pt}
+  ol.points li{counter-increment:pt;display:grid;grid-template-columns:2.6rem 1fr;gap:.6rem;padding:1rem 0;border-top:1px solid var(--line-soft)}
+  ol.points li:first-child{border-top:0;padding-top:0}
+  ol.points li::before{content:counter(pt,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--eye);padding-top:.35rem}
+  ol.points .pt{font-family:"Fraunces",Georgia,serif;font-size:1.22rem;font-weight:600;color:var(--loon);line-height:1.3;margin:0}
+  ol.points .why{margin:.35rem 0 0;color:var(--ink)}
+  ol.points .ev{margin:.4rem 0 0;font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--steel)}
+  ol.points .ev em{font-style:italic}
+
+  .fear{background:var(--loon);color:var(--paper)}
+  .fear .wrap{padding-block:clamp(2.5rem,6vw,4rem)}
+  .fear .eyebrow{color:var(--sky)}
+  .fear h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);color:#fff;margin:.5rem 0 .8rem;line-height:1.1}
+  .fear p{color:#d6dde4;max-width:40rem}
+  .fear .sign{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--sky);margin-top:1.6rem}
+
+  footer.foot .wrap{padding-block:2rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+  footer.foot .bk{font-family:"Fraunces",serif;color:var(--loon)}
+  footer.foot .bk em{font-style:italic}
+  footer.foot .meta{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--steel)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a href="/" aria-label="Home"><img class="brandmark" src="/brandmark.png" alt="Minnesota skyline and whistle — the emblem of Minneapolis: A City Protects Her Own" onerror="this.style.display='none'"></a>
+    <span class="brandtext">
+      <span class="name">City Protects</span>
+      <span class="book">Companion to <em>Minneapolis: A City Protects Her Own</em></span>
+    </span>
+    <nav><a href="/resources/">Ways to help</a><a href="/what-should-change/" aria-current="page">What should change</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-watermark" src="/watermark.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">The author's positions</span>
+      <h1>What Should Change</h1>
+      <p class="lede">The book documents what happened in Minneapolis. This page says what I think should change because of it. It is opinion, and it is mine. The book had to be finished; this page doesn't, and I will revise it as events warrant.</p>
+      <hr class="rule">
+      <!-- LAST UPDATED — change this date whenever you revise a point -->
+      <p class="stamp"><span class="dot"></span> Last updated: September 10, 2026 &nbsp;·&nbsp; Where a point rests on the book's evidence, the chapter is named.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ENFORCEMENT ===================== -->
+<section class="band" id="enforcement">
+  <div class="wrap">
+    <span class="eyebrow">01 — Enforcement</span>
+    <h2>I am not against immigration enforcement.</h2>
+    <p class="intro">That is the sentence people expect a book like this not to say, so it goes first. The argument of the book is not that the law should go unenforced. It is that what happened in Minneapolis was not enforcement of the law.</p>
+    <ol class="points">
+      <li><div><p class="pt">Secure the border.</p><p class="why">A country is entitled to control who enters it. Nothing in this book argues otherwise.</p></div></li>
+      <li><div><p class="pt">Remove the people who are actually dangerous criminals.</p><p class="why">That is what the operation said it was for. By the government's own arrest data, it wasn't: of the more than 3,600 immigrants arrested, most had no criminal record at all, and roughly a third were "collateral" — swept up beside someone else.</p><p class="ev">Chapter One; Chapter Nine</p></div></li>
+      <li><div><p class="pt">Stop detaining and deporting people who are going through the system the right way.</p><p class="why">Refugees awaiting green cards, asylum applicants with pending cases, people who showed up for their own check-ins — these are people following the rules. Arresting them punishes compliance.</p><p class="ev">Chapter Seven, <em>U.H.A. v. Bondi</em>; Chapter Twelve</p></div></li>
+      <li><div><p class="pt">Create a pathway to citizenship for people who have been here for years.</p><p class="why">Someone who has worked, paid taxes, raised children, and built a life here over a decade or more is a neighbor, not a case. The law should have a way to say so.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== THE PEOPLE ===================== -->
+<section class="band" id="people">
+  <div class="wrap">
+    <span class="eyebrow">02 — The people caught in it</span>
+    <h2>There is no need for cruelty.</h2>
+    <p class="intro">Enforcement can be lawful and still be humane. The operation chose, over and over, not to be.</p>
+    <ol class="points" start="5" style="counter-reset:pt 4">
+      <li><div><p class="pt">Restore Temporary Protected Status where it was terminated.</p><p class="why">TPS was granted because the countries in question were not safe to return to. That was true when it was granted and is true now; ending it was a political act, not a finding.</p><p class="ev">Chapter Twelve; Chapter Thirteen</p></div></li>
+      <li><div><p class="pt">End the cruelty.</p><p class="why">Chemical agents on bystanders, a five-year-old taken from a car, families held for weeks without a hearing, a dying woman left without the CPR the agents were trained to give — none of it was necessary to enforce any law. It was the method.</p><p class="ev">Chapter Three; Chapter Four; Chapter Seven</p></div></li>
+      <li><div><p class="pt">No child detention.</p><p class="why">Dilley was built to hold families who had just crossed the border. It was used to hold children taken from Minneapolis homes and schools. Congressman Joaquin Castro, after his sixth visit: “It’s the only place I can think of in America where we imprison young children who have done absolutely nothing wrong.”</p><p class="ev">Chapter Eight</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== ACCOUNTABILITY ===================== -->
+<section class="band" id="accountability">
+  <div class="wrap">
+    <span class="eyebrow">03 — Accountability</span>
+    <h2>Power without accountability is the whole problem.</h2>
+    <p class="intro">Every institution built to answer for this operation was dismantled, sidelined, or ignored while it ran. Rebuilding them is the work.</p>
+    <ol class="points" start="8" style="counter-reset:pt 7">
+      <li><div><p class="pt">Hold federal agents accountable.</p><p class="why">Two people were killed on Minneapolis streets by federal agents. The investigations were closed, redirected, or taken away from the people trying to conduct them. Agents who use force should answer for it the way any officer does.</p><p class="ev">Chapter Three; Chapter Four; Chapter Nine</p></div></li>
+      <li><div><p class="pt">End racial profiling.</p><p class="why">Stops based on how someone looks, what language they speak, or what neighborhood they live in are not enforcement. A federal judge — a Trump appointee — found the evidence that agents did exactly that "compelling and troubling."</p><p class="ev">Chapter Nine; Chapter Twelve; Appendix A</p></div></li>
+      <li><div><p class="pt">No masks. Visible badge numbers. No tactical gear.</p><p class="why">Targeted enforcement does not require any of it. An officer of the law acting lawfully can show a face and a number. ICE's own acting director said he was “not a fan of the mask” — while agents in balaclavas worked from unmarked cars with switched plates. Masks, unmarked vehicles, and military kit are overkill for immigration enforcement, and they are what turned every encounter into a standoff.</p><p class="ev">Chapter One; Chapter Five</p></div></li>
+      <li><div><p class="pt">Require unannounced third-party inspection of every detention center.</p><p class="why">The offices that existed to oversee detention were cut or shuttered during the operation. Inspectors who can walk in on any day, unannounced, are how the public learns whether detainees are being treated humanely.</p><p class="ev">Chapter Seven</p></div></li>
+      <li><div><p class="pt">Audit where the detention money goes.</p><p class="why">CoreCivic and companies like it are paid per person per day. The public should be able to see whether that money buys decent food and shelter or profit.</p><p class="ev">Chapter Eight; Chapter Eleven</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== SURVEILLANCE ===================== -->
+<section class="band" id="surveillance">
+  <div class="wrap">
+    <span class="eyebrow">04 — Surveillance</span>
+    <h2>What was collected in Minneapolis does not go away when the agents do.</h2>
+    <p class="intro">The operation photographed, scanned, tracked, and swabbed people who were never charged with anything. The records it built are still on file.</p>
+    <ol class="points" start="13" style="counter-reset:pt 12">
+      <li><div><p class="pt">Delete the photographs.</p><p class="why">Agents in Minnesota carry facial-recognition software — Mobile Fortify — and used it on people’s faces in the street. Department records say the agency can keep each photograph, and the location where it was taken, for as long as fifteen years, with no way for anyone to opt out. A face checked against a database on a public sidewalk should be checked and discarded, not kept for fifteen years with a map of where you were.</p><p class="ev">Chapter Five</p></div></li>
+      <li><div><p class="pt">No DNA from people who are never charged.</p><p class="why">Protesters and observers — U.S. citizens among them — were arrested, held for hours, fingerprinted, photographed, and swabbed for DNA, then released without charge. The samples flow into the FBI’s national database, CODIS, where they implicate not only the person sampled but their relatives. A swab taken at a lawful protest is not evidence; it is a catalog.</p><p class="ev">Chapter Five; Appendix A</p></div></li>
+      <li><div><p class="pt">Keep the plate-reader cameras out of immigration enforcement.</p><p class="why">Minnesota law says the suburbs’ Flock plate-reader data may be shared only to assist an active criminal investigation. During the surge it was searched hundreds of thousands of times in a single month, and hundreds of those searches were expressly labeled civil immigration enforcement. Two suburbs cut their contracts outright; one hooded its cameras in black plastic. The law already exists. It needs to be enforced against the agencies that ignored it.</p><p class="ev">Chapter Five; Appendix A</p></div></li>
+      <li><div><p class="pt">Body cameras on every agent, and footage that the public can see.</p><p class="why">Most ICE agents in Minneapolis carried no body camera. Where cameras existed, the footage was reviewed in private: the video of Alex Pretti’s killing was shown to no one — not the public, not the state investigators — for six months. ICE’s own policy releases video of a shooting only when the agency judges it “in the best interests of the agency.” Cameras that record for the agency alone are not accountability.</p><p class="ev">Chapter Five; Chapter Thirteen; Appendix B</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== THE BUILDOUT ===================== -->
+<section class="band" id="buildout">
+  <div class="wrap">
+    <span class="eyebrow">05 — The buildout</span>
+    <h2>The expansion is out of proportion to its stated purpose.</h2>
+    <p class="intro">This is the part that outlasts Minneapolis.</p>
+    <ol class="points" start="17" style="counter-reset:pt 16">
+      <li><div><p class="pt">DHS does not need this much money for this purpose.</p><p class="why">Congress put roughly $85 billion at ICE's disposal, most of it new money. Enforcing immigration law does not require that, or warehouses converted into detention centers, or a hiring surge so fast that the background checks necessary to ensure that only people without criminal histories are placed in positions of power over others were not run.</p><p class="ev">Chapter Eleven</p></div></li>
+      <li><div><p class="pt">Stop the expansion.</p><p class="why">The scale of what is being built — the agents, the facilities, the surveillance — exceeds anything immigration enforcement could use. When capacity outruns purpose, the purpose changes to fit the capacity.</p><p class="ev">Chapter Eleven; Chapter Five</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== WHAT I FEAR ===================== -->
+<section class="fear" id="fear">
+  <div class="wrap">
+    <span class="eyebrow">A closing note — what I fear</span>
+    <h2>This is not a finding. It is a fear.</h2>
+    <p>Everything above rests on the record in the book. This paragraph goes past it, and I want to be plain that it does.</p>
+    <p>I think this administration wants immigrants out of the country. I also think it is using immigration enforcement as the reason to put armed federal agents on the streets of every community, answering to no one but the person holding the executive office. The investigations named Puppet Master and Whipple Shield were opened against protesters, not immigrants. The detention centers are being built faster than any enforcement need can explain. I am afraid that what is being normalized is the equipment of a police state, and that the cells being built now will one day hold people whose only offense was disagreeing with the government.</p>
+    <p>I hope I am wrong. The book exists so that, if I am not, no one can say they weren't told.</p>
+    <p class="sign">— Ange Pearson</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="bk">From <em>Minneapolis: A City Protects Her Own</em></span>
+    <span class="meta">cityprotects.com/what-should-change</span>
+  </div>
+</footer>
+
+</body>
+</html>
